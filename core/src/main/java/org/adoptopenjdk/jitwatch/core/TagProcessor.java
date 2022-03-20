@@ -113,6 +113,11 @@ public class TagProcessor
 			logger.debug("Handling line: {}", line);
 		}
 
+		// comment
+		if (line.substring(1).startsWith("!--")) {
+			return null;
+		}
+
 		// closing tag
 		if (line.charAt(1) == C_SLASH)
 		{
